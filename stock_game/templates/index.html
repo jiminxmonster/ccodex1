@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}대시보드{% endblock %}
+{% block content %}
+<h2>보유 현황</h2>
+<p>잔고: {{ portfolio.balance | int }} 원</p>
+<table>
+    <tr><th>종목</th><th>수량</th><th>평균단가</th></tr>
+    {% for sym, pos in portfolio.positions.items() %}
+    <tr>
+        <td>{{ sym }}</td>
+        <td>{{ pos.quantity }}</td>
+        <td>{{ pos.avg_price | round(2) }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
