@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}가상 주식 게임{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">대시보드</a>
+        <a href="{{ url_for('trade') }}">매매</a>
+        <a href="{{ url_for('stats') }}">통계</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
